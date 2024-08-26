@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import { fetchStudents } from "./services/api";
+import OffcanvasNavbar from "./components/common/Navbar";
+
 
 function App() {
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    const getStudents = async () => {
+      const studentData = await fetchStudents();
+      setStudents(studentData);
+    };
+
+    getStudents();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <OffcanvasNavbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              students={students}
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

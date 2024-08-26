@@ -1,13 +1,58 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa; /* Light background for the whole app */
+  color: #343a40; /* Dark color for text */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Consistent font weight for headings */
+}
+
+
+.navbar-collapse{flex-basis: 0 !important;    flex-grow: 0 !important;}
+.user-card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out; 
+  cursor: pointer;
+}
+
+.user-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+}
+/* Custom CSS for the table */
+.student-table {
+  background-color: #f8f9fa; /* Light background color for the table */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures rounded corners work */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+}
+
+.student-table th, .student-table td {
+  vertical-align: middle; /* Centers text vertically */
+  padding: 12px; /* Adds more padding for a cleaner look */
+  height: 50px;
+}
+
+.student-table th {
+  background-color: #343a40; /* Dark background for the headers */
+  color: #ffffff; /* White text for the headers */
+  text-align: center; /* Center-align the header text */
+
+}
+.student-table tr{
+  transition:  background-color 0.3s ease-in-out; 
+}
+
+.student-table tr:hover {
+  background-color: #e9ecef; /* Light grey hover effect for rows */
+}
+
+.student-table td {
+  text-align: left; /* Align text to the left */
+}
+
+.student-table td:last-child {
+  text-align: right; /* Align the last column's text to the right */
 }

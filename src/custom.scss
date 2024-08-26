@@ -1,0 +1,68 @@
+$theme-colors: (
+  "primary": #0d6efd,
+  "secondary": #6c757d,
+  "success": #198754,
+  "info": #0dcaf0,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #f8f9fa,
+  "dark": #343a40
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: map-get($theme-colors, "light");
+  color: map-get($theme-colors, "dark");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.navbar-collapse {
+  flex-basis: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.user-card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+}
+
+.student-table {
+  background-color: map-get($theme-colors, "light");
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  th, td {
+    vertical-align: middle;
+    padding: 12px;
+    height: 50px;
+  }
+
+  th {
+    background-color: map-get($theme-colors, "light");
+  }
+
+  tr {
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+
+  td {
+    text-align: left;
+  }
+}
